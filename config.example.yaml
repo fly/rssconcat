@@ -1,0 +1,19 @@
+# feeds contains configuration for feeds that need to be concatenaded.
+# Configuration for each feed is list or URLs with source feeds and title for concatenated feed.
+feeds:
+  functional:
+    title: Functional programming and Haskell questions
+    urls:
+    - https://stackoverflow.com/feeds/tag?tagnames=haskell&sort=newest
+    - https://stackoverflow.com/feeds/tag?tagnames=functional-programming&sort=newest
+  python:
+    title: Machine learning related questions
+    urls:
+    - https://stackoverflow.com/feeds/tag?tagnames=machine-learning&sort=newest
+    - https://stackoverflow.com/feeds/tag?tagnames=deep-learning&sort=newest
+    - https://stackoverflow.com/feeds/tag?tagnames=neural-network&sort=newest
+
+# Configuration for web server
+server:
+  host: 127.0.0.1
+  port: 8080

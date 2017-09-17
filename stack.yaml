@@ -1,0 +1,7 @@
+flags: {}
+extra-package-dbs: []
+packages:
+- .
+extra-deps:
+- HsSyck-0.53
+resolver: lts-9.3

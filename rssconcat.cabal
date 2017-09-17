@@ -1,0 +1,52 @@
+name:                rssconcat
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/fly/rssconcat#readme
+license:             BSD3
+license-file:        LICENSE
+author:              fly
+maintainer:          fly@users.noreply.github.com
+copyright:           2017 fly
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Server, Config, Client
+  build-depends:       base >= 4.7 && < 5
+                     , HsSyck
+                     , containers
+                     , data-default
+                     , streaming-commons
+                     , warp
+                     , scotty
+                     , string-conversions
+                     , http-conduit
+                     , feed
+                     , async
+                     , xml
+  default-language:    Haskell2010
+
+executable rssconcat
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , rssconcat
+  default-language:    Haskell2010
+
+test-suite rssconcat-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , rssconcat
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/fly/rssconcat
